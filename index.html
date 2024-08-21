@@ -21,12 +21,12 @@
       <!-- Campi modulo -->
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="name">Nome e cognome del richiedente:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="Richiedente" placeholder="Inserisci nome e cognome" required>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="Nome e cognome del richiedente" placeholder="Inserisci nome e cognome" required>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="phone">Numero di telefono dove poter essere contattati:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" name="Telefono" placeholder="Inserisci numero di telefono" required>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" name="Numero di telefono" placeholder="Inserisci numero di telefono" required>
       </div>
 
       <div class="mb-4">
@@ -41,7 +41,21 @@
           <option value="chiavi">Chiavi</option>
           <option value="altro">Altro</option>
         </select>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" name="Altro oggetto smarrito" type="text" placeholder="Inserisci l'oggetto smarrito">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" name="Altro" type="text" placeholder="Inserisci l'oggetto smarrito">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="location">Dove:</label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="location" name="Dove">
+          <option value="">Seleziona il luogo</option>
+          <option value="mare">Mare</option>
+          <option value="spiaggia">Spiaggia</option>
+          <option value="bosco">Bosco</option>
+          <option value="campo">Campo</option>
+          <option value="giardino">Giardino privato</option>
+          <option value="altro">Altro</option>
+        </select>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="location-other" name="Altro luogo" type="text" placeholder="Inserisci il luogo">
       </div>
 
       <div class="mb-4 hidden" id="beach-type-container">
@@ -97,7 +111,7 @@
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="city">Comune:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="Città" type="text" placeholder="Inserisci il comune">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="Comune" type="text" placeholder="Inserisci il comune">
       </div>
 
       <div class="mb-4">
