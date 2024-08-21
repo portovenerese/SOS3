@@ -21,17 +21,17 @@
       <!-- Campi modulo -->
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="name">Nome e cognome del richiedente:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" placeholder="Inserisci nome e cognome" required>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="Richiedente" placeholder="Inserisci nome e cognome" required>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="phone">Numero di telefono dove poter essere contattati:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" name="phone" placeholder="Inserisci numero di telefono" required>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" name="Telefono" placeholder="Inserisci numero di telefono" required>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="lost-item">Oggetto smarrito:</label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item" name="lost-item" required>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item" name="Oggetto smarrito" required>
           <option value="">Seleziona l'oggetto smarrito</option>
           <option value="anello">Anello</option>
           <option value="braccialetto">Braccialetto</option>
@@ -41,26 +41,12 @@
           <option value="chiavi">Chiavi</option>
           <option value="altro">Altro</option>
         </select>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" name="lost-item-other" type="text" placeholder="Inserisci l'oggetto smarrito">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="location">Dove:</label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="location" name="location">
-          <option value="">Seleziona il luogo</option>
-          <option value="mare">Mare</option>
-          <option value="spiaggia">Spiaggia</option>
-          <option value="bosco">Bosco</option>
-          <option value="campo">Campo</option>
-          <option value="giardino">Giardino privato</option>
-          <option value="altro">Altro</option>
-        </select>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="location-other" name="location-other" type="text" placeholder="Inserisci il luogo">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" name="Altro oggetto smarrito" type="text" placeholder="Inserisci l'oggetto smarrito">
       </div>
 
       <div class="mb-4 hidden" id="beach-type-container">
         <label class="block text-gray-700 font-bold mb-2" for="beach-type">Stabilimento balneare o spiaggia libera?</label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-type" name="beach-type">
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-type" name="Stabilimento balneare o spiaggia libera?">
           <option value="">Seleziona</option>
           <option value="stabilimento">Stabilimento balneare</option>
           <option value="pubblica">Spiaggia pubblica</option>
@@ -69,7 +55,7 @@
 
       <div class="mb-4 hidden" id="water-depth-container">
         <label class="block text-gray-700 font-bold mb-2" for="water-depth">Profondità dell'acqua:</label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="water-depth" name="water-depth">
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="water-depth" name="Profondità dell'acqua">
           <option value="">Seleziona</option>
           <option value="bagnasciuga">Acqua bassa (bagnasciuga)</option>
           <option value="metroemezzo">Acqua fino ad un metro e mezzo</option>
@@ -79,7 +65,7 @@
 
       <div class="mb-4 hidden" id="seabed-type-container">
         <label class="block text-gray-700 font-bold mb-2" for="seabed-type">Tipologia di fondale:</label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="seabed-type" name="seabed-type">
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="seabed-type" name="Tipologia di fondale">
           <option value="">Seleziona</option>
           <option value="sabbia">Sabbia</option>
           <option value="ghiaia">Ghiaia</option>
@@ -90,7 +76,7 @@
 
       <div class="mb-4 hidden" id="beach-sand-type-container">
         <label class="block text-gray-700 font-bold mb-2" for="beach-sand-type">Tipologia di spiaggia:</label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-sand-type" name="beach-sand-type">
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-sand-type" name="Tipologia di spiaggia">
           <option value="">Seleziona</option>
           <option value="sabbia">Sabbia</option>
           <option value="ghiaia">Ghiaia</option>
@@ -101,22 +87,22 @@
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="region">Regione:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="region" name="region" type="text" placeholder="Inserisci la regione">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="region" name="Regione" type="text" placeholder="Inserisci la regione">
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="province">Provincia:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="province" name="province" type="text" placeholder="Inserisci la provincia">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="province" name="Provincia" type="text" placeholder="Inserisci la provincia">
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="city">Comune:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="city" type="text" placeholder="Inserisci il comune">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="Città" type="text" placeholder="Inserisci il comune">
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="notes">Note:</label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" name="notes" placeholder="Inserisci note aggiuntive"></textarea>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" name="Note" placeholder="Inserisci note aggiuntive"></textarea>
       </div>
 
       <div class="flex items-center justify-between">
