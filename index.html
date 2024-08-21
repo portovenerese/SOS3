@@ -17,7 +17,7 @@
   </header>
 
   <main class="container mx-auto my-8">
-    <form id="lost-item-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form id="lost-item-form" action="https://formspree.io/f/xyzgdwan" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="name">
           Nome e cognome del richiedente:
@@ -36,7 +36,7 @@
         <label class="block text-gray-700 font-bold mb-2" for="lost-item">
           Oggetto smarrito:
         </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item" required>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item" name="lost-item" required>
           <option value="">Seleziona l'oggetto smarrito</option>
           <option value="anello">Anello</option>
           <option value="braccialetto">Braccialetto</option>
@@ -46,7 +46,7 @@
           <option value="chiavi">Chiavi</option>
           <option value="altro">Altro</option>
         </select>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" type="text" placeholder="Inserisci l'oggetto smarrito">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" name="lost-item-other" type="text" placeholder="Inserisci l'oggetto smarrito">
       </div>
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="location">
@@ -140,8 +140,7 @@
         </label>
         <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" placeholder="Inserisci note aggiuntive"></textarea>
       </div>
-
-      <div class="flex items-center justify-between">
+ <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id="submit-button">
           Invia
         </button>
@@ -149,9 +148,7 @@
     </form>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    const formspreeUrl = 'https://formspree.io/f/xyzgdwan';
     const form = document.getElementById('lost-item-form');
     const lostItemSelect = document.getElementById('lost-item');
     const lostItemOtherInput = document.getElementById('lost-item-other');
@@ -185,27 +182,30 @@
       }
     });
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const formData = new FormData(form);
-      
       if (lostItemSelect.value === 'altro') {
-        formData.set('lost-item', lostItemOtherInput.value);
+        lostItemSelect.value = lostItemOtherInput.value;
       }
 
-      try {
-        const response = await axios.post(formspreeUrl, formData);
-        if (response.status === 200) {
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
           alert('Dati inviati correttamente!');
           form.reset();
         } else {
           throw new Error('Errore nell\'invio dei dati');
         }
-      } catch (error) {
+      }).catch(error => {
         alert('Si è verificato un errore nell\'invio dei dati. Riprova più tardi.');
         console.error('Errore:', error);
-      }
+      });
     });
   </script>
 </body>
