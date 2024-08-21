@@ -18,9 +18,38 @@
 
   <main class="container mx-auto my-8">
     <form id="lost-item-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <!-- ... (altri campi del form rimangono invariati) ... -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="name">
+          Nome e cognome del richiedente:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Inserisci nome e cognome">
+      </div>
 
       <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="phone">
+          Numero di telefono dove poter essere contattati:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder="Inserisci numero di telefono">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="lost-item">
+          Oggetto smarrito:
+        </label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item">
+          <option value="">Seleziona l'oggetto smarrito</option>
+          <option value="anello">Anello</option>
+          <option value="braccialetto">Braccialetto</option>
+          <option value="orecchino">Orecchino</option>
+          <option value="orologio">Orologio</option>
+          <option value="ciondolo">Ciondolo</option>
+          <option value="chiavi">Chiavi</option>
+          <option value="altro">Altro</option>
+        </select>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" type="text" placeholder="Inserisci l'oggetto smarrito">
+      </div>
+
+     <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="location">
           Dove:
         </label>
@@ -85,9 +114,40 @@
         </select>
       </div>
 
-      <!-- ... (altri campi del form rimangono invariati) ... -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="region">
+          Regione:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="region" type="text" placeholder="Inserisci la regione">
+      </div>
 
-    </form>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="province">
+          Provincia:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="province" type="text" placeholder="Inserisci la provincia">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="city">
+          Comune:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" placeholder="Inserisci il comune">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="notes">
+          Note:
+        </label>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" placeholder="Inserisci note aggiuntive"></textarea>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" id="submit-button">
+          Invia
+        </button>
+      </div>
+     </form>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
