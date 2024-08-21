@@ -18,24 +18,19 @@
 
   <main class="container mx-auto my-8">
     <form id="lost-item-form" action="https://formspree.io/f/xyzgdwan" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <!-- Campi modulo -->
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="name">
-          Nome e cognome del richiedente:
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Inserisci nome e cognome" required>
+        <label class="block text-gray-700 font-bold mb-2" for="name">Nome e cognome del richiedente:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" placeholder="Inserisci nome e cognome" required>
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="phone">
-          Numero di telefono dove poter essere contattati:
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder="Inserisci numero di telefono" required>
+        <label class="block text-gray-700 font-bold mb-2" for="phone">Numero di telefono dove poter essere contattati:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" name="phone" placeholder="Inserisci numero di telefono" required>
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="lost-item">
-          Oggetto smarrito:
-        </label>
+        <label class="block text-gray-700 font-bold mb-2" for="lost-item">Oggetto smarrito:</label>
         <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item" name="lost-item" required>
           <option value="">Seleziona l'oggetto smarrito</option>
           <option value="anello">Anello</option>
@@ -48,11 +43,10 @@
         </select>
         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" name="lost-item-other" type="text" placeholder="Inserisci l'oggetto smarrito">
       </div>
+
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="location">
-          Dove:
-        </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="location">
+        <label class="block text-gray-700 font-bold mb-2" for="location">Dove:</label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="location" name="location">
           <option value="">Seleziona il luogo</option>
           <option value="mare">Mare</option>
           <option value="spiaggia">Spiaggia</option>
@@ -61,14 +55,12 @@
           <option value="giardino">Giardino privato</option>
           <option value="altro">Altro</option>
         </select>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="location-other" type="text" placeholder="Inserisci il luogo">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="location-other" name="location-other" type="text" placeholder="Inserisci il luogo">
       </div>
 
       <div class="mb-4 hidden" id="beach-type-container">
-        <label class="block text-gray-700 font-bold mb-2" for="beach-type">
-          Stabilimento balneare o spiaggia libera?
-        </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-type">
+        <label class="block text-gray-700 font-bold mb-2" for="beach-type">Stabilimento balneare o spiaggia libera?</label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-type" name="beach-type">
           <option value="">Seleziona</option>
           <option value="stabilimento">Stabilimento balneare</option>
           <option value="pubblica">Spiaggia pubblica</option>
@@ -76,10 +68,8 @@
       </div>
 
       <div class="mb-4 hidden" id="water-depth-container">
-        <label class="block text-gray-700 font-bold mb-2" for="water-depth">
-          Profondità dell'acqua:
-        </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="water-depth">
+        <label class="block text-gray-700 font-bold mb-2" for="water-depth">Profondità dell'acqua:</label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="water-depth" name="water-depth">
           <option value="">Seleziona</option>
           <option value="bagnasciuga">Acqua bassa (bagnasciuga)</option>
           <option value="metroemezzo">Acqua fino ad un metro e mezzo</option>
@@ -88,10 +78,8 @@
       </div>
 
       <div class="mb-4 hidden" id="seabed-type-container">
-        <label class="block text-gray-700 font-bold mb-2" for="seabed-type">
-          Tipologia di fondale:
-        </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="seabed-type">
+        <label class="block text-gray-700 font-bold mb-2" for="seabed-type">Tipologia di fondale:</label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="seabed-type" name="seabed-type">
           <option value="">Seleziona</option>
           <option value="sabbia">Sabbia</option>
           <option value="ghiaia">Ghiaia</option>
@@ -101,10 +89,8 @@
       </div>
 
       <div class="mb-4 hidden" id="beach-sand-type-container">
-        <label class="block text-gray-700 font-bold mb-2" for="beach-sand-type">
-          Tipologia di spiaggia:
-        </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-sand-type">
+        <label class="block text-gray-700 font-bold mb-2" for="beach-sand-type">Tipologia di spiaggia:</label>
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="beach-sand-type" name="beach-sand-type">
           <option value="">Seleziona</option>
           <option value="sabbia">Sabbia</option>
           <option value="ghiaia">Ghiaia</option>
@@ -114,33 +100,26 @@
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="region">
-          Regione:
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="region" type="text" placeholder="Inserisci la regione">
+        <label class="block text-gray-700 font-bold mb-2" for="region">Regione:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="region" name="region" type="text" placeholder="Inserisci la regione">
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="province">
-          Provincia:
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="province" type="text" placeholder="Inserisci la provincia">
+        <label class="block text-gray-700 font-bold mb-2" for="province">Provincia:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="province" name="province" type="text" placeholder="Inserisci la provincia">
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="city">
-          Comune:
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" placeholder="Inserisci il comune">
+        <label class="block text-gray-700 font-bold mb-2" for="city">Comune:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="city" type="text" placeholder="Inserisci il comune">
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="notes">
-          Note:
-        </label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" placeholder="Inserisci note aggiuntive"></textarea>
+        <label class="block text-gray-700 font-bold mb-2" for="notes">Note:</label>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" name="notes" placeholder="Inserisci note aggiuntive"></textarea>
       </div>
- <div class="flex items-center justify-between">
+
+      <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id="submit-button">
           Invia
         </button>
@@ -189,11 +168,12 @@
         lostItemSelect.value = lostItemOtherInput.value;
       }
 
+      // Aggiungo la funzionalità di invio tramite fetch
       fetch(form.action, {
         method: form.method,
         body: new FormData(form),
         headers: {
-            'Accept': 'application/json'
+          'Accept': 'application/json'
         }
       }).then(response => {
         if (response.ok) {
