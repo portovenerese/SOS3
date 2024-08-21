@@ -22,21 +22,21 @@
         <label class="block text-gray-700 font-bold mb-2" for="name">
           Nome e cognome del richiedente:
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Inserisci nome e cognome">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Inserisci nome e cognome" required>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="phone">
           Numero di telefono dove poter essere contattati:
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder="Inserisci numero di telefono">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder="Inserisci numero di telefono" required>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="lost-item">
           Oggetto smarrito:
         </label>
-        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item">
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lost-item" required>
           <option value="">Seleziona l'oggetto smarrito</option>
           <option value="anello">Anello</option>
           <option value="braccialetto">Braccialetto</option>
@@ -48,7 +48,6 @@
         </select>
         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2 hidden" id="lost-item-other" type="text" placeholder="Inserisci l'oggetto smarrito">
       </div>
-
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="location">
           Dove:
@@ -143,17 +142,19 @@
       </div>
 
       <div class="flex items-center justify-between">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" id="submit-button">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id="submit-button">
           Invia
         </button>
       </div>
-      </form>
+    </form>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     const formspreeUrl = 'https://formspree.io/f/xyzgdwan';
     const form = document.getElementById('lost-item-form');
+    const lostItemSelect = document.getElementById('lost-item');
+    const lostItemOtherInput = document.getElementById('lost-item-other');
     const locationSelect = document.getElementById('location');
     const locationOtherInput = document.getElementById('location-other');
     const beachTypeContainer = document.getElementById('beach-type-container');
@@ -164,7 +165,11 @@
     const seabedTypeSelect = document.getElementById('seabed-type');
     const beachSandTypeContainer = document.getElementById('beach-sand-type-container');
     const beachSandTypeSelect = document.getElementById('beach-sand-type');
-    const submitButton = document.getElementById('submit-button');
+
+    lostItemSelect.addEventListener('change', () => {
+      lostItemOtherInput.classList.toggle('hidden', lostItemSelect.value !== 'altro');
+      lostItemOtherInput.required = lostItemSelect.value === 'altro';
+    });
 
     locationSelect.addEventListener('change', () => {
       locationOtherInput.classList.toggle('hidden', locationSelect.value !== 'altro');
@@ -180,27 +185,26 @@
       }
     });
 
-    submitButton.addEventListener('click', async () => {
-      const formData = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        lostItem: lostItemSelect.value === 'altro' ? lostItemOtherInput.value : lostItemSelect.value,
-        location: locationSelect.value === 'altro' ? locationOtherInput.value : locationSelect.value,
-        beachType: beachTypeSelect.value,
-        waterDepth: waterDepthSelect.value,
-        seabedType: seabedTypeSelect.value,
-        beachSandType: beachSandTypeSelect.value,
-        region: document.getElementById('region').value,
-        province: document.getElementById('province').value,
-        city: document.getElementById('city').value,
-        notes: document.getElementById('notes').value
-      };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      if (lostItemSelect.value === 'altro') {
+        formData.set('lost-item', lostItemOtherInput.value);
+      }
 
       try {
-        await axios.post(formspreeUrl, formData);
-        alert('Dati inviati correttamente!');
+        const response = await axios.post(formspreeUrl, formData);
+        if (response.status === 200) {
+          alert('Dati inviati correttamente!');
+          form.reset();
+        } else {
+          throw new Error('Errore nell\'invio dei dati');
+        }
       } catch (error) {
         alert('Si è verificato un errore nell\'invio dei dati. Riprova più tardi.');
+        console.error('Errore:', error);
       }
     });
   </script>
